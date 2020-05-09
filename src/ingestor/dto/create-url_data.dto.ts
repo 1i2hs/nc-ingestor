@@ -1,3 +1,4 @@
 export class CreateUrlDataDTO {
-  url: string;
+  url: string | Array<string>;
+  device?: string;
 }
