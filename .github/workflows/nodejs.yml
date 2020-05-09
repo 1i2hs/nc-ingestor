@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    name: Test: Unit test, Coverage test
+    name: "Test: Unit test, Coverage test"
     runs-on: ubuntu-latest
 
     strategy:
