@@ -3,29 +3,13 @@
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
-# trigger:
-# - master
-
-# pool:
-#   vmImage: 'ubuntu-latest'
-
-# steps:
-# - task: NodeTool@0
-#   inputs:
-#     versionSpec: '12.x'
-#   displayName: 'Install Node.js'
-
-# - script: |
-#     npm install
-#     npm run build
-#   displayName: 'npm install and build'
-
-
 name: CI
+pr:
+  - master
 pool:
   vmImage: 'ubuntu-latest'
 jobs:
-- job: unit_test
+- job: UnitTest
   displayName: 'Run unit test'
   continueOnError: false
   steps:
@@ -37,9 +21,10 @@ jobs:
       npm install
       npm run test
     displayName: 'Install dependencies and run unit test'
-- job: echo
-  displayName: 'run echo'
-  continueOnError: false
-  steps:
-  - bash: echo "hello from now-connected"
-    displayName: "Echo!!"
+# - job: CoverageTest
+#   displayName: 'run echo'
+#   continueOnError: false
+#   dependsOn: UnitTest
+#   steps:
+#   - bash: echo "hello from now-connected"
+#     displayName: "Echo!!"
