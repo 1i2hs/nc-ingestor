@@ -4,6 +4,8 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 name: CI
+trigger:
+  - master
 pr:
   - master
 pool:
