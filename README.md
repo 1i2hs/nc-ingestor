@@ -1,5 +1,5 @@
 # Now-Connected/Ingestor
-![Node.js CI](https://github.com/1i2hs/nc-ingestor/workflows/Node.js%20CI/badge.svg?branch=master)
+[![Build Status](https://oneitwoh.visualstudio.com/now-connected/_apis/build/status/1i2hs.nc-ingestor?branchName=master)](https://oneitwoh.visualstudio.com/now-connected/_build/latest?definitionId=1&branchName=master)
 
 A simple ingesting server application which collects **url** or a **list of url** and pass those data to Data Processing Engine.
 
