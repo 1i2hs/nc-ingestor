@@ -1,0 +1,30 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+name: CI
+pr:
+  - master
+pool:
+  vmImage: 'ubuntu-latest'
+jobs:
+- job: UnitTest
+  displayName: 'Run unit test'
+  continueOnError: false
+  steps:
+  - task: NodeTool@0
+    displayName: 'Install Node.js'
+    inputs:
+      versionSpec: '12.x'
+  - bash: |
+      npm install
+      npm run test
+    displayName: 'Install dependencies and run unit test'
+# - job: CoverageTest
+#   displayName: 'run echo'
+#   continueOnError: false
+#   dependsOn: UnitTest
+#   steps:
+#   - bash: echo "hello from now-connected"
+#     displayName: "Echo!!"
